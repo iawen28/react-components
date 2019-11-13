@@ -1,0 +1,344 @@
+
+/*svg {
+    position: absolute;
+}*/
+
+.bubble {
+  display: inline-block;
+  margin: 1.1vw;
+  position: relative;
+  height: 12vw;
+  width: 12vw;
+  border-radius: 50%;
+  transition: height 2s, width 2s;
+}
+
+/*light refraction*/
+.bubble:before {
+    content: "";
+    display: block;
+    z-index: 10;
+    position: relative;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 50%;
+    box-shadow: 1.6vw -1.4vw 0.2vw -1.5vw white;
+    top: 17%;
+    right: 17%;
+    float: right;
+    /*opacity: 0.7;*/
+}
+
+.bubble.hovBR {
+    animation: wobbleTLBR 0.7s linear;
+    transform-origin: 10% 10%;
+}
+
+.bubble.hovTL {
+    animation: wobbleTLBR 0.7s linear;
+    transform-origin: 85% 85%;
+}
+
+.bubble.hovTR {
+    animation: wobbleTRBL 0.7s linear;
+    transform-origin: 15% 85%;
+}
+
+.bubble.hovBL {
+    animation: wobbleTRBL 0.7s linear;
+    transform-origin: 90% 10%;
+}
+
+.bubble.hovL {
+    animation: wobbleLR 0.7s linear;
+    transform-origin: 90% 50%;
+}
+
+.bubble.hovR {
+    animation: wobbleLR 0.7s linear;
+    transform-origin: 10% 50%;
+}
+
+.bubble.hovT {
+    animation: wobbleTB 0.7s linear;
+    transform-origin: 50% 90%;
+}
+
+.bubble.hovB {
+    animation: wobbleTB 0.7s linear;
+    transform-origin: 50% 10%;
+}
+
+.bubble-main-color, .bubble-alt-color {
+  position: absolute;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: colorFade 6s linear infinite;
+}
+
+.bubble-alt-color {
+  animation-delay: 3s;
+}
+
+/*COLOR 1*/
+
+.bubble:nth-of-type(9n+1) .bubble-main-color {
+  border: 1px solid rgba(45, 156, 224, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(45, 156, 224, 0.1) 0%,
+    rgba(45, 156, 224, 0.1) 55%,
+    rgba(45, 156, 224, 0.3) 95%,
+    rgba(45, 156, 224, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+2) .bubble-main-color {
+  border: 1px solid rgba(235, 213, 16, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(235, 213, 16, 0.1) 0%,
+    rgba(235, 213, 16, 0.1) 55%,
+    rgba(235, 213, 16, 0.3) 95%,
+    rgba(235, 213, 16, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+3) .bubble-main-color {
+  border: 1px solid rgba(244, 97, 151, 0.2);
+    background: radial-gradient(ellipse at center,
+    rgba(244, 97, 151, 0.1) 0%,
+    rgba(244, 97, 151, 0.1) 55%,
+    rgba(244, 97, 151, 0.3) 95%,
+    rgba(244, 97, 151, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+4) .bubble-main-color {
+  border: 1px solid rgba(244, 154, 52, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(244, 154, 52, 0.1) 0%,
+    rgba(244, 154, 52, 0.1) 55%,
+    rgba(244, 154, 52, 0.3) 95%,
+    rgba(244, 154, 52, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+5) .bubble-main-color {
+  border: 1px solid rgba(71, 159, 191, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(71, 159, 191, 0.1) 0%,
+    rgba(71, 159, 191, 0.1) 55%,
+    rgba(71, 159, 191, 0.3) 95%,
+    rgba(71, 159, 191, 1) 100%
+  ); 
+}
+
+.bubble:nth-of-type(9n+6) .bubble-main-color {
+  border: 1px solid rgba(118, 88, 219, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(118, 88, 219, 0.1) 0%,
+    rgba(118, 88, 219, 0.1) 55%,
+    rgba(118, 88, 219, 0.3) 95%,
+    rgba(118, 88, 219, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+7) .bubble-main-color {
+  border: 1px solid rgba(160, 140, 140, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(160, 140, 140, 0.1) 0%,
+    rgba(160, 140, 140, 0.1) 55%,
+    rgba(160, 140, 140, 0.3) 95%,
+    rgba(160, 140, 140, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+8) .bubble-main-color {
+  border: 1px solid rgba(43, 186, 133, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(43, 186, 133, 0.1) 0%,
+    rgba(43, 186, 133, 0.1) 55%,
+    rgba(43, 186, 133, 0.3) 95%,
+    rgba(43, 186, 133, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n) .bubble-main-color {
+  border: 1px solid rgba(244, 154, 52, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(244, 154, 52, 0.1) 0%,
+    rgba(244, 154, 52, 0.1) 55%,
+    rgba(244, 154, 52, 0.3) 95%,
+    rgba(244, 154, 52, 1) 100%
+  );
+}
+
+/*COLOR 2 */
+
+.bubble:nth-of-type(9n+1) .bubble-alt-color {
+  border: 1px solid rgba(196, 104, 138, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(196, 104, 138, 0.1) 0%,
+    rgba(196, 104, 138, 0.1) 55%,
+    rgba(196, 104, 138, 0.3) 95%,
+    rgba(196, 104, 138, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+2) .bubble-alt-color {
+  border: 1px solid rgba(0, 217, 193, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(0, 217, 193, 0.1) 0%,
+    rgba(0, 217, 193, 0.1) 55%,
+    rgba(0, 217, 193, 0.3) 95%,
+    rgba(0, 217, 193, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+3) .bubble-alt-color {
+  border: 1px solid rgba(235, 213, 16, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(235, 213, 16, 0.1) 0%,
+    rgba(235, 213, 16, 0.1) 55%,
+    rgba(235, 213, 16, 0.3) 95%,
+    rgba(235, 213, 16, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+4) .bubble-alt-color {
+  border: 1px solid rgba(110, 157, 245, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(110, 157, 245, 0.1) 0%,
+    rgba(110, 157, 245, 0.1) 55%,
+    rgba(110, 157, 245, 0.3) 95%,
+    rgba(110, 157, 245, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+5) .bubble-alt-color {
+  border: 1px solid rgba(165, 196, 96, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(165, 196, 96, 0.1) 0%,
+    rgba(165, 196, 96, 0.1) 55%,
+    rgba(165, 196, 96, 0.3) 95%,
+    rgba(165, 196, 96, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+6) .bubble-alt-color {
+  border: 1px solid rgba(43, 216, 255, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(43, 216, 255, 0.1) 0%,
+    rgba(43, 216, 255, 0.1) 55%,
+    rgba(43, 216, 255, 0.3) 95%,
+    rgba(43, 216, 255, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+7) .bubble-alt-color {
+  border: 1px solid rgba(255, 120, 120, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(255, 120, 120, 0.1) 0%,
+    rgba(255, 120, 120, 0.1) 55%,
+    rgba(255, 120, 120, 0.3) 95%,
+    rgba(255, 120, 120, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n+8) .bubble-alt-color {
+  border: 1px solid rgba(255, 230, 0, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(255, 230, 0, 0.1) 0%,
+    rgba(255, 230, 0, 0.1) 55%,
+    rgba(255, 230, 0, 0.3) 95%,
+    rgba(255, 230, 0, 1) 100%
+  );
+}
+
+.bubble:nth-of-type(9n) .bubble-alt-color {
+  border: 1px solid rgba(176, 160, 121, 0.2);
+  background: radial-gradient(ellipse at center,
+    rgba(176, 160, 121, 0.1) 0%,
+    rgba(176, 160, 121, 0.1) 55%,
+    rgba(176, 160, 121, 0.3) 95%,
+    rgba(176, 160, 121, 1) 100%
+  );
+}
+
+
+/*animations*/
+@keyframes colorFade {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes wobbleTLBR {
+    24% {
+        transform: skewY(-4deg) rotateZ(3deg);
+    }
+
+    48% {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    76% {
+        transform: skewY(-1.32deg) rotateZ(1deg);
+    }
+}
+
+@keyframes wobbleTRBL {
+    24% {
+        transform: skewY(4deg) rotateZ(-3deg);
+    }
+
+    48% {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    76% {
+        transform: skewY(1.32deg) rotateZ(-1deg);
+    }
+}
+
+@keyframes wobbleLR {
+    24% {
+        -webkit-transform: matrix(0.96, 0, 0, 1.04, 0, 0);
+        transform: matrix(0.96, 0, 0, 1.04, 0, 0);
+    }
+
+    48% {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    76% {
+        -webkit-transform: matrix(0.99, 0, 0, 1.01, 0, 0);
+        transform: matrix(0.99, 0, 0, 1.01, 0, 0);
+    }
+}
+
+@keyframes wobbleTB {
+    24% {
+        -webkit-transform: matrix(1.04, 0, 0, 0.96, 0, 0);
+        transform: matrix(1.04, 0, 0, 0.96, 0, 0);
+    }
+
+    48% {
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    76% {
+        -webkit-transform: matrix(1.01, 0, 0, 0.99, 0, 0);
+        transform: matrix(1.01, 0, 0, 0.99, 0, 0);
+    }
+
+}
